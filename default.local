@@ -1,1 +1,2 @@
-CVMFS_REPOSITORIES=dampe.cern.ch
+CVMFS_REPOSITORIES=glast.cern.ch,dampe.cern.ch
+CVMFS_HTTP_PROXY=DIRECT
