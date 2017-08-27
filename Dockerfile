@@ -8,9 +8,8 @@ ADD default.local /etc/cvmfs/default.local
 RUN mkdir -p /cvmfs/dampe.cern.ch
 ### ROOT prerequisites
 RUN yum -y install git cmake gcc-c++ gcc binutils libX11-devel libXpm-devel libXft-devel libXext-devel && yum clean all
-### adding workflow
-### RUN curl -o /tmp/workflow.tar.gz -k -L https://dampevm3.unige.ch/dmpworkflow/releases/DmpWorkflow.devel.tar.gz && \
-###    pip install /tmp/workflow.tar.gz 
+### more prerequisites
+RUN yum -y install mesa-libGLU-devel libXmu-devel && yum clean all
 RUN echo "mount -t cvmfs dampe.cern.ch /cvmfs/dampe.cern.ch" >> /root/.bashrc
 RUN echo "source /cvmfs/dampe.cern.ch/rhel6-64/etc/setup.sh" >> /root/.bashrc
 ENTRYPOINT ["/bin/bash","--login","-c"]
