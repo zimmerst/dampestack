@@ -4,4 +4,4 @@ importlib
 resource
 progressbar
 xmltodict
-psutil
+argparse
